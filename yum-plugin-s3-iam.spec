@@ -37,6 +37,12 @@ rm -rf ${RPM_BUILD_ROOT}
 /usr/lib/yum-plugins/s3iam.py*
 
 %changelog
+* Tue Dec 04 2018 James Kennedy <jkenn99@gmail.com>
+- Added additional exception handling
+
+* Tue Aug 28 2018 Piotr Kasperski <piotrkas@kainso.com>
+- Added https://github.com/seporaitis/yum-s3-iam/pull/64
+
 * Fri May 05 2017 Mathias Brossard <mathias@brossard.org> 1.2.2-1
 - Handle special value '__none__' for proxy (@andlam)
 
