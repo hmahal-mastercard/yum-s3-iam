@@ -325,7 +325,7 @@ class S3Grabber(object):
         return data[:-1]
 
     def _request(self, path, timeval=None):
-        url = urlparse.urljoin(self.baseurl, urllib2.quote(path))
+        url = urlparse.urljoin(self.baseurl, path)
         request = urllib2.Request(url)
         if self.region:
             self.signV4(request, timeval)
