@@ -29,6 +29,7 @@ import yum.Errors
 import yum.plugins
 
 from yum.yumRepo import YumRepository
+from urllib import quote_plus
 
 __author__ = "Julius Seporaitis"
 __email__ = "julius@seporaitis.net"
@@ -325,7 +326,7 @@ class S3Grabber(object):
         return data[:-1]
 
     def _request(self, path, timeval=None):
-        url = urlparse.urljoin(self.baseurl, path)
+        url = urlparse.urljoin(self.baseurl, quote_plus(path, '/~'))
         request = urllib2.Request(url)
         if self.region:
             self.signV4(request, timeval)
